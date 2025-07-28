@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission Form - SLS & SS College</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('') no-repeat center center fixed;
+      background-size: cover;
+      background-image: url('card3.jpg');
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+      margin-top: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+    a.no-underline {
+          text-decoration: none;
+         font-weight: bold;
+          
+         }
+
+    .toggle-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .toggle-option {
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-weight: 600;
+      flex: 1;
+      text-align: center;
+      color: #2c3e50;
+      border-radius: 50px;
+    }
+
+    .toggle-option:hover {
+      background: rgba(0,0,0,0.05);
+    }
+
+    .toggle-option.active {
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      color: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+      color: #2c3e50;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #f4f6f8;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(69, 123, 157, 0.2);
+    }
+
+    .junior-college-fields, .degree-college-fields {
+      display: none;
+    }
+
+    .show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    button {
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      width: 100%;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #0d1b2a, #1d3557);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-indigo-900 to-indigo-700 text-white py-6 shadow-lg text-center">
+     <a href="index.html" class="no-underline"><h1 class="text-3xl font-bold">SLS & SS College  contact  Portal</h1></a>
+  </header>
+
+  <!-- Form -->
+  <div class="form-container">
+    <!-- College Switcher -->
+    <div class="toggle-container">
+      <div class="toggle-option active" id="junior-toggle">SS Junior College</div>
+      <div class="toggle-option" id="degree-toggle">SLS Degree College</div>
+    </div>
+
+    <form id="admissionForm">
+      <!-- Common Fields -->
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer (Styled like index.html) -->
+  <footer class="bg-gradient-to-r from-indigo-900 to-indigo-700 text-white mt-16 py-6">
+    <div class="max-w-7xl mx-auto text-center px-4">
+      <p class="text-lg font-semibold">© 2025 SLS & SS College. All rights reserved.</p>
+      <div class="flex justify-center gap-4 mt-2">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Terms</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const juniorToggle = document.getElementById('junior-toggle');
+    const degreeToggle = document.getElementById('degree-toggle');
+    const juniorFields = document.querySelector('.junior-college-fields');
+    const degreeFields = document.querySelector('.degree-college-fields');
+
+    juniorToggle.addEventListener('click', () => {
+      juniorToggle.classList.add('active');
+      degreeToggle.classList.remove('active');
+      juniorFields.classList.add('show');
+      degreeFields.classList.remove('show');
+    });
+
+    degreeToggle.addEventListener('click', () => {
+      degreeToggle.classList.add('active');
+      juniorToggle.classList.remove('active');
+      degreeFields.classList.add('show');
+      juniorFields.classList.remove('show');
+    });
+
+    // Form submission with success message and reset
+    document.getElementById("admissionForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Application submitted successfully!");
+      this.reset();
+
+      // Reset form to default view (Junior College selected)
+      juniorToggle.classList.add('active');
+      degreeToggle.classList.remove('active');
+      juniorFields.classList.add('show');
+      degreeFields.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>

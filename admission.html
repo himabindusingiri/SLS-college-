@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Portal</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 650px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+            font-weight: 700;
+        }
+        a.no-underline {
+          text-decoration: none;
+         font-weight: bold;
+          
+         }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            margin: 15px auto;
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .form-container:hover h1::after {
+            width: 120px;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .toggle-option {
+            padding: 12px 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 50px;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            color: #7f8c8d;
+        }
+
+        .toggle-option.active {
+            color: white;
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        .form-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #34495e;
+            transition: all 0.3s ease;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        input:hover, select:hover, textarea:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.2);
+            border-bottom: 3px solid #3498db;
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9 0%, #1a252f 100%);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .junior-college-fields, .degree-college-fields {
+            display: none;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .junior-college-fields.show, .degree-college-fields.show {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+         <a href="index.html" class="no-underline"><h1>College Admission Portal</h1></a>
+        
+        <!-- Toggle Switch -->
+        <div class="toggle-container">
+            <div class="toggle-option active" id="junior-toggle">Junior College</div>
+            <div class="toggle-option" id="degree-toggle">Degree College</div>
+        </div>
+
+        <form id="admission-form">
+            <!-- Common Fields -->
+            <div class="form-group visible">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group visible">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group visible">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group visible">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Junior College Fields -->
+            <div class="junior-college-fields show">
+                <div class="form-group">
+                    <label for="ssc-percentage">10th Percentage</label>
+                    <input type="number" id="ssc-percentage" name="ssc_percentage" min="0" max="100" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stream">Preferred Stream</label>
+                    <select id="stream" name="stream" required>
+                        <option value="" disabled selected>Select your stream</option>
+                        <option value="science">MPC (PCM/PCB)</option>
+                        <option value="commerce">BiPC</option>
+                        <option value="arts">CEC</option>
+                        <option value="arts">HEC</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Degree College Fields -->
+            <div class="degree-college-fields">
+                <div class="form-group">
+                    <label for="hsc-percentage">12th Percentage</label>
+                    <input type="number" id="hsc-percentage" name="hsc_percentage" min="0" max="100" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="degree-course">Degree Program</label>
+                    <select id="degree-course" name="degree_course" required>
+                        <option value="" disabled selected>Choose your program</option>
+                        <option value="bsc">B.Sc (Computer Science)</option>
+                        <option value="bcom">B.Com (Commerce)</option>
+                        <option value="ba">B.A (Arts)</option>
+                        <option value="bca">BCA (Computer Applications)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-btn">
+                <span>Submit Application</span>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        const juniorToggle = document.getElementById('junior-toggle');
+        const degreeToggle = document.getElementById('degree-toggle');
+        const juniorFields = document.querySelector('.junior-college-fields');
+        const degreeFields = document.querySelector('.degree-college-fields');
+
+        juniorToggle.addEventListener('click', () => {
+            juniorToggle.classList.add('active');
+            degreeToggle.classList.remove('active');
+            degreeFields.classList.remove('show');
+            setTimeout(() => {
+                juniorFields.classList.add('show');
+            }, 300);
+        });
+
+        degreeToggle.addEventListener('click', () => {
+            degreeToggle.classList.add('active');
+            juniorToggle.classList.remove('active');
+            juniorFields.classList.remove('show');
+            setTimeout(() => {
+                degreeFields.classList.add('show');
+            }, 300);
+        });
+
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach((group, index) => {
+            setTimeout(() => {
+                group.classList.add('visible');
+            }, index * 150);
+        });
+
+        const form = document.getElementById('admission-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Add ripple effect (optional)
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+            ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+
+            // Show alert and refresh
+            setTimeout(() => {
+                alert('Form submitted successfully!');
+                location.reload();
+            }, 300);
+        });
+    </script>
+</body>
+</html>

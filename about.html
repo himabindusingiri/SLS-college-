@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - SLS College</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f0f8ff, #e0eafc);
+      color: #2c3e50;
+      scroll-behavior: smooth;
+      animation: zoomIn 0.8s ease;
+      background-image: url('card4.webp');
+    }
+
+    /* Add language switch styles */
+    .language-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .language-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .language-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: none;
+      width: 150px;
+    }
+    
+    .language-dropdown.show {
+      display: block;
+    }
+    
+    .language-option {
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .language-option:hover {
+      background: #bc1010;
+    }
+    
+    .language-option .fi {
+      font-size: 1.2em;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.96); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(to right, #2c3e50, #4b79a1);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative; /* Needed for language switch positioning */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: fadeLogo 1.5s ease;
+    }
+
+    @keyframes fadeLogo {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #f1c40f, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes fadeInHeader {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  a.no-underline {
+          text-decoration: none;
+         font-weight: bold;
+          color: #f1f0f3;
+         }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .intro {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(6px);
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #3498db, #9b59b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+      color: #34495e;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInCard 1s ease forwards;
+      position: relative;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      box-shadow: 0 0 15px rgba(52, 152, 219, 0);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card:hover::after {
+      box-shadow: 0 0 30px rgba(52, 152, 219, 0.4);
+    }
+
+    .card h3 {
+      background: linear-gradient(to right, #16a085, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .logo h1 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px 10px;
+      }
+      
+      .language-switch {
+        position: static;
+        margin: 15px auto;
+        width: fit-content;
+        color: black;
+      }
+      
+      .language-dropdown {
+        left: 0;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header style="background: linear-gradient(135deg, #9b59b6, #3498db); padding: 80px 20px; text-align: center; animation: fadeInHeader 1.5s ease-out;">
+      <!-- Language Switch Button -->
+      <div class="language-switch">
+        <button class="language-btn" id="languageBtn">
+          <span class="fi fi-gb"></span>
+
+          English
+          <span style="font-size: 0.8em;">▼</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+          <div class="language-option" data-lang="en">
+            <span class="fi fi-gb"></span>
+            English
+          </div>
+          <div class="language-option" data-lang="hi">
+            <span class="fi fi-in"></span>
+            हिंदी
+          </div>
+          <div class="language-option" data-lang="te">
+            <span class="fi fi-in"></span>
+            తెలుగు
+          </div>
+        </div>
+      </div>
+      
+      <h1 style="
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        color: rgb(249, 243, 245);
+        margin: 0;
+        font-weight: 800;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        letter-spacing: 2px;
+        animation: slideDown 1.5s ease-out;
+      ">
+       <a href="index.html" class="no-underline">SLS Degree & Junior College- about us </a> 
+      </h1>
+      <p style="
+        color: #edefef;
+        font-size: 1.2rem;
+        margin-top: 15px;
+        font-weight: 400;
+        animation: fadeInText 2s ease-out;
+      " id="headerSubtitle">
+        Empowering your journey through knowledge and excellence
+      </p>
+    </header>
+
+  <div class="about-container">
+    <div class="intro">
+      <h2 id="introTitle">Inspiring Bright Futures</h2>
+      <p id="introText">
+        At <strong>SLS College</strong>, we believe in providing a transformative learning experience. With modern infrastructure, experienced faculty, and a student-first approach, we aim to build the next generation of thinkers, leaders, and change-makers. Whether you're pursuing Junior College (MPC, BiPC, CEC, HEC) or Degree Courses (B.Sc, B.Com, B.A, BCA), SLS empowers your journey.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3 id="missionTitle">🌟 Our Mission</h3>
+        <p id="missionText">To provide holistic, high-quality education that nurtures curiosity, creativity, and leadership. We equip students with the tools to thrive academically, socially, and professionally.</p>
+      </div>
+
+      <div class="card">
+        <h3 id="visionTitle">🎯 Our Vision</h3>
+        <p id="visionText">To become a premier academic institution known for excellence in education, innovation, and inclusivity — empowering learners to shape a better tomorrow.</p>
+      </div>
+
+      <div class="card">
+        <h3 id="offerTitle">🏫 What We Offer</h3>
+        <p id="offerText">A range of academic streams in Junior and Degree levels, mentoring support, co-curricular exposure, digital classrooms, campus safety, and career guidance.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background: linear-gradient(to right, #34495e, #2c3e50); color: white; padding: 40px 20px; font-family: 'Poppins', sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1100px; margin: auto;">
+      
+      <div style="flex: 1 1 250px; margin-bottom: 20px;">
+        <h2 style="font-size: 1.5rem; color: #f1c40f;">SLS College</h2>
+        <p id="footerText" style="line-height: 1.6;">Empowering students with knowledge, values, and a future filled with opportunity. Join us in your journey toward excellence.</p>
+      </div>
+
+      <div style="flex: 1 1 250px; margin-bottom: 20px;">
+        <h3 style="color: #f1c40f;">Contact</h3>
+        <p>📍 SLS Campus, Main Road, Hyderabad</p>
+        <p>📞 +91-98765-43210</p>
+        <p>✉️ info@slscollege.in</p>
+      </div>
+
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h3 style="color: #f1c40f;" id="followTitle">Follow Us</h3>
+        <p style="font-size: 1.4rem;">
+          <a href="#" style="color: rgb(245, 241, 241); margin-right: 10px;">🌐</a>
+          <a href="#" style="color: white; margin-right: 10px;">📘</a>
+          <a href="#" style="color: white; margin-right: 10px;">🐦</a>
+          <a href="#" style="color: white;">📸</a>
+        </p>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 20px; border-top: 1px solid #888;">
+      &copy; 2025 SLS Degree & Junior College | <span id="footerDesign">Designed with ❤️ by Team SLS</span>
+    </div>
+  </footer>
+
+  <script>
+    // Language switch functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageBtn = document.getElementById('languageBtn');
+      const languageDropdown = document.getElementById('languageDropdown');
+      
+      // Toggle dropdown
+      languageBtn.addEventListener('click', function() {
+        languageDropdown.classList.toggle('show');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.language-switch')) {
+          languageDropdown.classList.remove('show');
+        }
+      });
+      
+      // Language data for English, Hindi and Telugu
+      const translations = {
+        en: {
+          headerSubtitle: "Empowering your journey through knowledge and excellence",
+          introTitle: "Inspiring Bright Futures",
+          introText: "At <strong>SLS College</strong>, we believe in providing a transformative learning experience. With modern infrastructure, experienced faculty, and a student-first approach, we aim to build the next generation of thinkers, leaders, and change-makers. Whether you're pursuing Junior College (MPC, BiPC, CEC, HEC) or Degree Courses (B.Sc, B.Com, B.A, BCA), SLS empowers your journey.",
+          missionTitle: "🌟 Our Mission",
+          missionText: "To provide holistic, high-quality education that nurtures curiosity, creativity, and leadership. We equip students with the tools to thrive academically, socially, and professionally.",
+          visionTitle: "🎯 Our Vision",
+          visionText: "To become a premier academic institution known for excellence in education, innovation, and inclusivity — empowering learners to shape a better tomorrow.",
+          offerTitle: "🏫 What We Offer",
+          offerText: "A range of academic streams in Junior and Degree levels, mentoring support, co-curricular exposure, digital classrooms, campus safety, and career guidance.",
+          footerText: "Empowering students with knowledge, values, and a future filled with opportunity. Join us in your journey toward excellence.",
+          followTitle: "Follow Us",
+          footerDesign: "Designed with ❤️ by Team SLS",
+          buttonText: "English"
+        },
+        hi: {
+          headerSubtitle: "ज्ञान और उत्कृष्टता के माध्यम से आपकी यात्रा को सशक्त बनाना",
+          introTitle: "उज्ज्वल भविष्य को प्रेरित करना",
+          introText: "<strong>एसएलएस कॉलेज</strong> में, हम एक परिवर्तनकारी शिक्षण अनुभव प्रदान करने में विश्वास करते हैं। आधुनिक बुनियादी ढांचे, अनुभवी संकाय और छात्र-प्रथम दृष्टिकोण के साथ, हम विचारकों, नेताओं और परिवर्तन-निर्माताओं की अगली पीढ़ी का निर्माण करना चाहते हैं। चाहे आप जूनियर कॉलेज (एमपीसी, बीआईपीसी, सीईसी, एचईसी) या डिग्री पाठ्यक्रम (बी.एससी, बी.कॉम, बी.ए, बीसीए) का पीछा कर रहे हों, एसएलएस आपकी यात्रा को सशक्त बनाता है।",
+          missionTitle: "🌟 हमारा मिशन",
+          missionText: "समग्र, उच्च गुणवत्ता वाली शिक्षा प्रदान करना जो जिज्ञासा, रचनात्मकता और नेतृत्व को बढ़ावा दे। हम छात्रों को शैक्षणिक, सामाजिक और पेशेवर रूप से सफल होने के लिए उपकरणों से लैस करते हैं।",
+          visionTitle: "🎯 हमारी दृष्टि",
+          visionText: "शिक्षा, नवाचार और समावेशिता में उत्कृष्टता के लिए जाने जाने वाले एक प्रमुख शैक्षणिक संस्थान बनने के लिए — शिक्षार्थियों को एक बेहतर कल को आकार देने के लिए सशक्त बनाना।",
+          offerTitle: "🏫 हम क्या प्रदान करते हैं",
+          offerText: "जूनियर और डिग्री स्तरों पर शैक्षणिक धाराओं की एक श्रृंखला, मेंटरिंग सहायता, सह-पाठयक्रम एक्सपोजर, डिजिटल कक्षाएं, परिसर सुरक्षा और करियर मार्गदर्शन।",
+          footerText: "छात्रों को ज्ञान, मूल्यों और अवसरों से भरे भविष्य के साथ सशक्त बनाना। उत्कृष्टता की ओर आपकी यात्रा में हमसे जुड़ें।",
+          followTitle: "हमें फॉलो करें",
+          footerDesign: "टीम एसएलएस द्वारा ❤️ के साथ डिज़ाइन किया गया",
+          buttonText: "हिंदी"
+        },
+        te: {
+          headerSubtitle: "జ్ఞానం మరియు శ్రేష్టత ద్వారా మీ ప్రయాణాన్ని శక్తివంతం చేయడం",
+          introTitle: "ప్రకాశవంతమైన భవిష్యత్తును ప్రేరేపించడం",
+          introText: "<strong>SLS కళాశాల</strong>లో, మేము రూపాంతరం చెందే అభ్యాస అనుభవాన్ని అందించడంలో నమ్మకం కలిగి ఉన్నాము. ఆధునిక మౌలిక సదుపాయాలు, అనుభవజ్ఞులైన ఫ్యాకల్టీ మరియు విద్యార్థి-మొదటి విధానంతో, ఆలోచనాపరులను, నాయకులను మరియు మార్పు తెచ్చేవారిని తర్వాతి తరాన్ని నిర్మించాలనే లక్ష్యంతో ఉన్నాము. మీరు జూనియర్ కళాశాల (MPC, BiPC, CEC, HEC) లేదా డిగ్రీ కోర్సులు (B.Sc, B.Com, B.A, BCA) చేస్తున్నప్పటికీ, SLS మీ ప్రయాణాన్ని శక్తివంతం చేస్తుంది.",
+          missionTitle: "🌟 మా మిషన్",
+          missionText: "జిజ్ఞాస, సృజనాత్మకత మరియు నాయకత్వాన్ని పెంపొందించే సమగ్ర, అధిక-నాణ్యత గల విద్యను అందించడం. విద్యార్థులు విద్యాపరంగా, సామాజికంగా మరియు వృత్తిపరంగా అభివృద్ధి చెందడానికి అవసరమైన సాధనాలతో మేము వారిని సజ్జురాజులు చేస్తాము.",
+          visionTitle: "🎯 మా దృష్టి",
+          visionText: "విద్య, ఆవిష్కరణ మరియు సమగ్రతలో శ్రేష్టతకు పేరొందిన ప్రముఖ విద్యా సంస్థగా మారడం — మంచి రేపును రూపొందించడానికి అభ్యాసకులను శక్తివంతం చేయడం.",
+          offerTitle: "🏫 మేము ఏమి అందిస్తాము",
+          offerText: "జూనియర్ మరియు డిగ్రీ స్థాయిలలో విద్యా ప్రవాహాల శ్రేణి, మార్గదర్శకత్వ మద్దతు, సహ-పాఠ్యక్రమాలు, డిజిటల్ తరగతి గదులు, క్యాంపస్ భద్రత మరియు కెరీర్ మార్గదర్శకత్వం.",
+          footerText: "విద్యార్థులను జ్ఞానం, విలువలు మరియు అవకాశాలతో నిండిన భవిష్యత్తుతో శక్తివంతం చేయడం. శ్రేష్టత వైపు మీ ప్రయాణంలో మాతో చేరండి.",
+          followTitle: "మమ్మల్ని అనుసరించండి",
+          footerDesign: "SLS టీమ్ చేత ❤️తో రూపకల్పన చేయబడింది",
+          buttonText: "తెలుగు"
+        }
+      };
+      
+      // Language selection
+      document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          changeLanguage(lang);
+          languageDropdown.classList.remove('show');
+          
+          // Update button text and flag
+          let flagClass, buttonText;
+          if (lang === 'en') {
+            flagClass = 'fi-gb';
+            buttonText = translations.en.buttonText;
+          } else if (lang === 'hi') {
+            flagClass = 'fi-in';
+            buttonText = translations.hi.buttonText;
+          } else if (lang === 'te') {
+            flagClass = 'fi-in';
+            buttonText = translations.te.buttonText;
+          }
+          
+          languageBtn.innerHTML = `
+            <span class="fi ${flagClass}"></span>
+            ${buttonText}
+            <span style="font-size: 0.8em;">▼</span>
+          `;
+        });
+      });
+      
+      // Change language function
+      function changeLanguage(lang) {
+        const elements = translations[lang];
+        for (const key in elements) {
+          const element = document.getElementById(key);
+          if (element) {
+            element.innerHTML = elements[key];
+          }
+        }
+        
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+      }
+    });
+  </script>
+</body>
+</html>

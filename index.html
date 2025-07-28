@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SLS & SS Colleges - Pullareddypeta</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  /* Add this to your existing style section */
+  body {
+    background-image: url('campus\ 5.jpg'); /* Your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  /* Optional: Add a semi-transparent overlay to improve text readability */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85); /* White with 85% opacity */
+    z-index: -1;
+  }
+  
+  /* Update existing body class to remove conflicting background */
+  .bg-white {
+    background-color: transparent !important;
+  }
+  
+  /* Make sure content sections have solid backgrounds */
+  section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin: 1rem 0;
+  
+    background-color: cornflowerblue;
+   }
+   navbar a:hover {
+      color: #ffeb3b;
+    }
+    header {
+  background-image: url('heder.jpg'); /* Your image path */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+    /* Scrolling Admission Banner (AFTER HEADER) */
+    .scroll-banner {
+      background-color: #ffe082;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      border-bottom: 2px solid #fbc02d;
+    }
+
+    .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+      font-weight: bold;
+      font-size: 18px;
+      color: #d32f2f;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px rgba(59,130,246,0.5), 0 0 20px rgba(59,130,246,0.4);
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+    .fade-hover:hover {
+      transition: all 0.4s ease-in-out;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    @keyframes scroll-gallery {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-scroll-gallery {
+      display: flex;
+      gap: 1rem;
+      animation: scroll-gallery 20s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-scroll {
+      animation: scroll 20s linear infinite;
+      width: max-content;
+    }
+  .header-img {
+      height: 90px;
+      width: auto;
+      background-color: white;
+      border-radius: 8px;
+      padding: 5px;
+      animation: floatImage 3s ease-in-out infinite;
+    }
+@keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+  </style>
+</head>
+<body class="bg-white text-gray-800 scroll-smooth">
+
+
+<a href="contact.html" class="floating-btn bg-yellow-400 hover:bg-yellow-300 text-blue-800 font-bold py-3 px-5 rounded-full shadow-lg transition-all animate-bounce flex items-center gap-2 fixed bottom-6 right-6 z-50">
+  <img src="coontact logo.jpg" alt="Contact Icon" class="w-6 h-6" />
+  <span>📞 Contact Us</span>
+</a>
+
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-6 shadow-lg text-center relative overflow-hidden">
+  <div class="absolute top-4 right-4 z-20">
+    <select id="languageSelect" class="text-black border px-3 py-1 rounded text-sm">
+      <option value="en">🌐 English</option>
+      <option value="te">తెలుగు</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+  </div>
+        <img src="heder.jpg" alt="About Logo" class="header-img">
+
+  <h1 class="text-4xl md:text-5xl font-extrabold glow-text z-10 relative" data-aos="zoom-in" data-i18n="title">Sri Srinivasa Education Society</h1>
+  <p class="text-lg mt-2 z-10 relative" data-i18n="subtitle">SLS Degree College & SS Junior College - Pullareddypeta</p>
+</header>
+
+
+<!-- Navbar -->
+<nav class="bg-white shadow sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="text-xl font-bold text-blue-700">🎓 SLS & SS</div>
+    <ul class="flex space-x-6 text-blue-700 font-semibold">
+      <li><a href="index.html" class="hover:text-blue-500" data-i18n="nav_home">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500" data-i18n="nav_about">About</a></li>
+      <li><a href="course.html" class="hover:text-blue-500" data-i18n="nav_courses">Courses</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500" data-i18n="nav_contact">Contact</a></li>
+     <li><a href="scholarship.html" class="hover:text-blue-500" data-i18n="nav_scholarship">Scholarships</a></li>
+     <li><a href="prebookingadmission .html" class="hover:text-blue-500" data-i18n="nav_prebooking">prebookingadmission</a></li>
+
+
+      
+    </ul>
+  </div>
+</nav>
+   <!-- Scrolling Admission Banner -->
+  <div class="scroll-banner">
+    <div class="scroll-text">
+      <a href="admission.html"class="on underline ">       🎓 Admission Open Now – Enroll Today! Limited Seats Available! Call Us: +91-9989135445,7702693936 🎓
+</a>
+    </div>
+  </div>
+<!-- Courses Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-blue-800 mb-12" data-aos="fade-up" data-i18n="courses_title">📘 Courses Offered</h3>
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Degree College -->
+      <div class="bg-blue-100 rounded-xl p-6 shadow fade-hover transition" data-aos="fade-right">
+        <h4 class="text-2xl font-semibold text-blue-800 mb-4"><i class="fas fa-university mr-2"></i><span data-i18n="degree_college">SLS Degree College</span></h4>
+        <ul class="list-disc ml-5 text-gray-800 space-y-1">
+          <li><strong data-i18n="ba">B.A:</strong> <span data-i18n="ba_subjects">History, Political Science (M)</span></li>
+          <li><strong data-i18n="bcom">B.Com:</strong> <span data-i18n="bcom_subjects">General, Computer Applications (M)</span></li>
+          <li><strong data-i18n="bsc">B.Sc:</strong> <span data-i18n="bsc_subjects">Botany, Chemistry, Mathematics, Computer Science, Physics (M)</span></li>
+        </ul>
+      </div>
+      <!-- Junior College -->
+      <div class="bg-purple-100 rounded-xl p-6 shadow fade-hover transition" data-aos="fade-left">
+        <h4 class="text-2xl font-semibold text-purple-800 mb-4"><i class="fas fa-graduation-cap mr-2"></i><span data-i18n="junior_college">SS Junior College</span></h4>
+        <ul class="list-disc ml-5 text-gray-800 space-y-1">
+          <li><strong>MPC</strong> – EM</li>
+          <li><strong>BiPC</strong> – EM & TM</li>
+          <li><strong>CEC</strong> – EM & TM</li>
+          <li><strong>HEC</strong> – EM & TM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- University Information Section -->
+<section class="bg-gradient-to-r from-indigo-100 to-purple-100 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-purple-800 mb-12" data-aos="fade-up" data-i18n="university_title">🎓 University Affiliation</h3>
+    <div class="bg-white p-8 rounded-xl shadow-lg fade-hover transition-transform duration-500 transform hover:-translate-y-1 hover:shadow-purple-300 hover:bg-purple-50" data-aos="fade-up">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div>
+          <h4 class="text-2xl font-semibold text-purple-700 mb-4 flex items-center"><i class="fas fa-university mr-2"></i><span data-i18n="affiliated">Affiliated University</span></h4>
+          <p>SLS Degree College is affiliated with Yogi Vemana University</p>
+          <p class="text-gray-700" data-i18n="university_recognition">We follow the university's academic structure and curriculum. Degrees awarded are officially recognized and respected across India.</p>
+          <div class="mt-4">
+            <a href="https://www.yvu.edu.in/" target="_blank" class="inline-block bg-purple-600 text-white px-5 py-2 rounded hover:bg-purple-500 transition"><span data-i18n="visit_university">🔗 Visit University Website</span></a>
+          </div>
+        </div>
+        <div class="mt-6 md:mt-0 md:ml-8">
+          
+          <img src="yvu.jpg" alt="University Logo" class="h-32 mx-auto md:mx-0 hover:scale-110 transition-transform duration-500 rounded-lg border-4 border-purple-200">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Academic Calendar -->
+<section class="bg-purple-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-purple-800 mb-12" data-aos="fade-up" data-i18n="calendar_title">📅 Academic Calendar Highlights</h3>
+    <div class="bg-white p-6 rounded-lg shadow-lg fade-hover transition-transform duration-500 transform hover:-translate-y-1 hover:shadow-purple-300 hover:bg-purple-50" data-aos="fade-up">
+      <ul class="list-inside list-disc space-y-3 text-gray-800 text-lg">
+        <li><span class="font-semibold text-purple-700" data-i18n="month_june">June:</span> <span data-i18n="june_desc">Admissions Begin – Secure your seat early.</span></li>
+        <li><span class="font-semibold text-purple-700" data-i18n="month_july">July:</span> <span data-i18n="july_desc">Commencement of Classes for Inter and Degree Programs.</span></li>
+        <li><span class="font-semibold text-purple-700" data-i18n="month_aug_dec">August to December:</span> <span data-i18n="aug_dec_desc">Continuous Internal Exams, Practical Labs, and Value-Added Workshops.</span></li>
+        <li><span class="font-semibold text-purple-700" data-i18n="month_jan">January:</span> <span data-i18n="jan_desc">Pre-Final Exams & Career Readiness Training.</span></li>
+        <li><span class="font-semibold text-purple-700" data-i18n="month_mar_apr">March - April:</span> <span data-i18n="mar_apr_desc">Final Board/University Exams.</span></li>
+        <li><span class="font-semibold text-purple-700" data-i18n="month_may">May:</span> <span data-i18n="may_desc">Summer Camp, Cultural Fests, and Bridge Courses.</span></li>
+      </ul>
+      <div class="mt-6">
+        <a href="#" class="inline-block bg-purple-700 text-white px-5 py-2 rounded hover:bg-purple-600 transition"><span data-i18n="download_calendar">📥 Download Full Calendar (PDF)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Campus Gallery Slider -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-purple-800 mb-12" data-aos="fade-up" data-i18n="gallery_title">🖼️ Our Campus Gallery</h3>
+    <div class="overflow-hidden relative" data-aos="fade-up">
+      <div class="flex transition-transform duration-1000 ease-in-out animate-scroll-gallery">
+        <img src="campus3.jpg" class="w-full md:w-1/3 rounded-lg shadow-md mx-2 hover:shadow-purple-300 hover:scale-105 transition-transform duration-300" alt="Campus 1">
+        <img src="campus1.jpg" class="w-full md:w-1/3 rounded-lg shadow-md mx-2 hover:shadow-purple-300 hover:scale-105 transition-transform duration-300" alt="Campus 2">
+        <img src="campus44.jpg" class="w-full md:w-1/3 rounded-lg shadow-md mx-2 hover:shadow-purple-300 hover:scale-105 transition-transform duration-300" alt="Campus 3">
+        <img src="campus 5.jpg" class="w-full md:w-1/3 rounded-lg shadow-md mx-2 hover:shadow-purple-300 hover:scale-105 transition-transform duration-300" alt="Campus 4">
+        <img src="campus 2.jpg" class="w-full md:w-1/3 rounded-lg shadow-md mx-2 hover:shadow-purple-300 hover:scale-105 transition-transform duration-300" alt="Campus 5">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features -->
+<section class="bg-blue-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-blue-800 mb-12" data-aos="fade-up" data-i18n="features_title">🌟 Key Features</h3>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up">
+        <i class="fas fa-user-check text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature1">Discipline & moral education with daily prayer and counseling</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="50">
+        <i class="fas fa-users-cog text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature2">Special attention to every student's progress & attendance</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-user-tie text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature3">Well qualified, experienced and dedicated faculty</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="150">
+        <i class="fas fa-school text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature4">Separate buildings for Junior & Degree colleges</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-bus text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature5">Transport facilities available</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="250">
+        <i class="fas fa-hand-holding-usd text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature6">SC, ST, BC, OC (EWS) Scholarships & EAMCET coaching</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-file-alt text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature7">Weekly exams & detailed progress tracking</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="350">
+        <i class="fas fa-user-graduate text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature8">Career counseling & higher education guidance</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-trophy text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature9">Scholarships for merit & cultural/sports excellence</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="450">
+        <i class="fas fa-language text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature10">Spoken English & personality development sessions</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="500">
+        <i class="fas fa-flask text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature11">Well-equipped science & computer laboratories</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow fade-hover" data-aos="fade-up" data-aos-delay="550">
+        <i class="fas fa-book-reader text-3xl text-blue-700 mb-3"></i>
+        <p data-i18n="feature12">Library with reference books & study material</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-gradient-to-r from-blue-100 to-blue-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-blue-800 mb-12" data-aos="fade-up" data-i18n="why_title">💡 Why Choose Us?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-6 rounded-lg shadow-lg fade-hover" data-aos="flip-left">
+        <i class="fas fa-laptop-code text-4xl text-blue-600 mb-3"></i>
+        <h4 class="text-lg font-bold mb-1" data-i18n="why1_title">Digital Classrooms</h4>
+        <p data-i18n="why1_desc">Smart teaching tools & online tests for better learning.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg fade-hover" data-aos="flip-up">
+        <i class="fas fa-user-shield text-4xl text-blue-600 mb-3"></i>
+        <h4 class="text-lg font-bold mb-1" data-i18n="why2_title">Safe & Supportive Environment</h4>
+        <p data-i18n="why2_desc">Focus on discipline, confidence & student welfare.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg fade-hover" data-aos="flip-right">
+        <i class="fas fa-hand-holding-heart text-4xl text-blue-600 mb-3"></i>
+        <h4 class="text-lg font-bold mb-1" data-i18n="why3_title">Full Guidance</h4>
+        <p data-i18n="why3_desc">From admissions to career – complete support system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-blue-900 text-white py-12 text-sm">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center md:text-left">
+    
+    <!-- SLS Degree College -->
+    <div class="bg-blue-800 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 p-5 rounded-xl">
+      <h4 class="font-bold mb-2 text-lg hover:text-yellow-300 transition duration-200" data-i18n="footer_degree">🎓 SLS Degree College</h4>
+      <p class="hover:text-gray-300 transition" data-i18n="footer_principal">Principal: <span class="text-white font-medium">M. Ramachandra Reddy</span></p>
+      <p class="hover:underline text-indigo-200 hover:text-white transition duration-150 cursor-pointer">📞 <span data-i18n="footer_degree_phone">9989135445, 7702693936</span></p>
+    </div>
+
+    <!-- SS Junior College -->
+    <div class="bg-blue-800 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 p-5 rounded-xl">
+      <h4 class="font-bold mb-2 text-lg hover:text-yellow-300 transition duration-200" data-i18n="footer_junior">🏫 SS Junior College</h4>
+      <p class="hover:text-gray-300 transition" data-i18n="footer_junior_principal">Principal: <span class="text-white font-medium">S.C. Durganna</span></p>
+      <p class="hover:underline text-indigo-200 hover:text-white transition duration-150 cursor-pointer">📞 <span data-i18n="footer_junior_phone">9441011443</span></p>
+    </div>
+
+    <!-- Correspondent -->
+    <div class="bg-blue-800 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 p-5 rounded-xl">
+      <h4 class="font-bold mb-2 text-lg hover:text-yellow-300 transition duration-200" data-i18n="footer_correspondent">👨‍💼 Correspondent</h4>
+      <p class="hover:text-gray-300 transition" data-i18n="footer_correspondent_name">I. Thirupal Reddy</p>
+      <p class="text-xs mt-2 text-indigo-200">© 2025 <span data-i18n="footer_society">Sri Srinivasa Education Society</span></p>
+    </div>
+  </div>
+
+  <!-- Certifications Section -->
+  <div class="max-w-6xl mx-auto px-6 mt-12 text-center border-t border-blue-700 pt-8">
+    <h3 class="text-xl font-semibold mb-6 text-white animate-pulse" data-i18n="footer_certifications">🏅 Recognized & Certified By</h3>
+
+    <!-- Moving Logos -->
+    <div class="overflow-hidden relative">
+      <div class="flex gap-12 animate-scroll">
+        <img src="ugclogo.png" alt="IIC" class="h-20 transition duration-300">
+        <img src="iso14001logo.png" alt="ISO 14001" class="h-20 transition duration-300">
+        <img src="iso9001logo.png" alt="ISO 9001" class="h-20 transition duration-300">
+        <img src="naaclogo.png" alt="NAAC" class="h-20 transition duration-300">
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-300 mt-6 italic" data-i18n="footer_cert_note">All certifications are recognized by national regulatory bodies.</p>
+  </div>
+</footer>
+
+<script>
+  AOS.init({ duration: 1000, once: true });
+  // Show login modal on first page load
+// Check if modal has been shown before
+
+
+  // Language translations object
+  const translations = {
+    en: {
+      // Header
+      "title": "Sri Srinivasa Education Society",
+      "subtitle": "SLS Degree College & SS Junior College - Pullareddypeta",
+      
+      // Navigation
+      "nav_home": "Home",
+      "nav_about": "About",
+      "nav_courses": "Courses",
+      "nav_contact": "Contact",
+      "nav_login": "Login",
+      
+      // Login Modal
+      "login_title": "🔐 Student Login",
+      "login_submit": "Submit",
+      
+      // Admission Button
+      "admission_now": "📋 Admission Now",
+      
+      // Courses Section
+      "courses_title": "📘 Courses Offered",
+      "degree_college": "SLS Degree College",
+      "junior_college": "SS Junior College",
+      "ba": "B.A",
+      "ba_subjects": "History, Political Science (M)",
+      "bcom": "B.Com",
+      "bcom_subjects": "General, Computer Applications (M)",
+      "bsc": "B.Sc",
+      "bsc_subjects": "Botany, Chemistry, Mathematics, Computer Science, Physics (M)",
+      
+      // University Section
+      "university_title": "🎓 University Affiliation",
+      "affiliated": "Affiliated University",
+      "university_desc": "SLS Degree College is affiliated with <strong class='text-purple-800'>Yogi Vemana University</strong>.",
+      "university_recognition": "We follow the university's academic structure and curriculum. Degrees awarded are officially recognized and respected across India.",
+      "visit_university": "🔗 Visit University Website",
+      
+      // Calendar Section
+      "calendar_title": "📅 Academic Calendar Highlights",
+      "month_june": "June",
+      "june_desc": "Admissions Begin – Secure your seat early.",
+      "month_july": "July",
+      "july_desc": "Commencement of Classes for Inter and Degree Programs.",
+      "month_aug_dec": "August to December",
+      "aug_dec_desc": "Continuous Internal Exams, Practical Labs, and Value-Added Workshops.",
+      "month_jan": "January",
+      "jan_desc": "Pre-Final Exams & Career Readiness Training.",
+      "month_mar_apr": "March - April",
+      "mar_apr_desc": "Final Board/University Exams.",
+      "month_may": "May",
+      "may_desc": "Summer Camp, Cultural Fests, and Bridge Courses.",
+      "download_calendar": "📥 Download Full Calendar (PDF)",
+      
+      // Gallery
+      "gallery_title": "🖼️ Our Campus Gallery",
+      
+      // Features
+      "features_title": "🌟 Key Features",
+      "feature1": "Discipline & moral education with daily prayer and counseling",
+      "feature2": "Special attention to every student's progress & attendance",
+      "feature3": "Well qualified, experienced and dedicated faculty",
+      "feature4": "Separate buildings for Junior & Degree colleges",
+      "feature5": "Transport facilities available",
+      "feature6": "SC, ST, BC, OC (EWS) Scholarships & EAMCET coaching",
+      "feature7": "Weekly exams & detailed progress tracking",
+      "feature8": "Career counseling & higher education guidance",
+      "feature9": "Scholarships for merit & cultural/sports excellence",
+      "feature10": "Spoken English & personality development sessions",
+      "feature11": "Well-equipped science & computer laboratories",
+      "feature12": "Library with reference books & study material",
+      
+      // Why Choose Us
+      "why_title": "💡 Why Choose Us?",
+      "why1_title": "Digital Classrooms",
+      "why1_desc": "Smart teaching tools & online tests for better learning.",
+      "why2_title": "Safe & Supportive Environment",
+      "why2_desc": "Focus on discipline, confidence & student welfare.",
+      "why3_title": "Full Guidance",
+      "why3_desc": "From admissions to career – complete support system.",
+      
+      // Footer
+      "footer_degree": "🎓 SLS Degree College",
+      "footer_principal": "Principal",
+      "footer_degree_phone": "9989135445, 7702693936",
+      "footer_junior": "🏫 SS Junior College",
+      "footer_junior_principal": "Principal",
+      "footer_junior_phone": "9441011443",
+      "footer_correspondent": "👨‍💼 Correspondent",
+      "footer_correspondent_name": "I. Thirupal Reddy",
+      "footer_society": "Sri Srinivasa Education Society",
+      "footer_certifications": "🏅 Recognized & Certified By",
+      "footer_cert_note": "All certifications are recognized by national regulatory bodies."
+    },
+    te: {
+      // Header
+      "title": "శ్రీ శ్రీనివాస ఎడ్యుకేషన్ సొసైటీ",
+      "subtitle": "ఎస్‌ఎల్ఎస్ డిగ్రీ కళాశాల & ఎస్‌ఎస్ జూనియర్ కళాశాల - పుల్లారెడ్డిపేట",
+      
+      // Navigation
+      "nav_home": "హోమ్",
+      "nav_about": "గురించి",
+      "nav_courses": "కోర్సులు",
+      "nav_contact": "సంప్రదించండి",
+      "nav_login": "లాగిన్",
+      
+      // Login Modal
+      "login_title": "🔐 విద్యార్థి లాగిన్",
+      "login_submit": "సమర్పించండి",
+      
+      // Admission Button
+      "admission_now": "📋 ఇప్పుడే ప్రవేశం",
+      
+      // Courses Section
+      "courses_title": "📘 అందించబడిన కోర్సులు",
+      "degree_college": "ఎస్‌ఎల్ఎస్ డిగ్రీ కళాశాల",
+      "junior_college": "ఎస్‌ఎస్ జూనియర్ కళాశాల",
+      "ba": "బి.ఏ",
+      "ba_subjects": "చరిత్ర, రాజకీయ శాస్త్రం (M)",
+      "bcom": "బి.కామ్",
+      "bcom_subjects": "జనరల్, కంప్యూటర్ అప్లికేషన్స్ (M)",
+      "bsc": "బి.ఎస్సీ",
+      "bsc_subjects": "బొటనీ, కెమిస్ట్రీ, మ్యాథమెటిక్స్, కంప్యూటర్ సైన్స్, ఫిజిక్స్ (M)",
+      
+      // University Section
+      "university_title": "🎓 విశ్వవిద్యాలయ అనుబంధం",
+      "affiliated": "అనుబంధిత విశ్వవిద్యాలయం",
+      "university_desc": "ఎస్‌ఎల్ఎస్ డిగ్రీ కళాశాల <strong class='text-purple-800'>యోగి వేమన యూనివర్శిటీ</strong>తో అనుబంధించబడింది.",
+      "university_recognition": "మేము విశ్వవిద్యాలయం యొక్క అకడమిక్ నిర్మాణం మరియు పాఠ్యాంశాలను అనుసరిస్తాము. ఇవ్వబడిన డిగ్రీలు భారతదేశం అంతటా అధికారికంగా గుర్తించబడతాయి మరియు గౌరవించబడతాయి.",
+      "visit_university": "🔗 విశ్వవిద్యాలయ వెబ్‌సైట్ సందర్శించండి",
+      
+      // Calendar Section
+      "calendar_title": "📅 విద్యాసంబంధ క్యాలెండర్ ముఖ్యాంశాలు",
+      "month_june": "జూన్",
+      "june_desc": "ప్రవేశాలు ప్రారంభం - మీ సీటును ముందుగానే సురక్షితం చేసుకోండి.",
+      "month_july": "జూలై",
+      "july_desc": "ఇంటర్ మరియు డిగ్రీ ప్రోగ్రామ్‌లకు తరగతులు ప్రారంభం.",
+      "month_aug_dec": "ఆగస్టు నుండి డిసెంబర్",
+      "aug_dec_desc": "నిరంతర అంతర్గత పరీక్షలు, ప్రాక్టికల్ ల్యాబ్స్ మరియు విలువ ఆధారిత వర్క్‌షాప్‌లు.",
+      "month_jan": "జనవరి",
+      "jan_desc": "ప్రీ-ఫైనల్ పరీక్షలు & కెరీర్ రెడినెస్ శిక్షణ.",
+      "month_mar_apr": "మార్చి - ఏప్రిల్",
+      "mar_apr_desc": "ఫైనల్ బోర్డ్/విశ్వవిద్యాలయ పరీక్షలు.",
+      "month_may": "మే",
+      "may_desc": "సమ్మర్ క్యాంప్, సాంస్కృతిక ఉత్సవాలు మరియు బ్రిడ్జ్ కోర్సులు.",
+      "download_calendar": "📥 పూర్తి క్యాలెండర్‌ను డౌన్‌లోడ్ చేయండి (PDF)",
+      
+      // Gallery
+      "gallery_title": "🖼️ మా క్యాంపస్ గ్యాలరీ",
+      
+      // Features
+      "features_title": "🌟 ముఖ్య లక్షణాలు",
+      "feature1": "ప్రార్థన మరియు కౌన్సెలింగ్‌తో కూడిన శిక్షణ & నైతిక విద్య",
+      "feature2": "ప్రతి విద్యార్థి పురోగతి & హాజరుకు ప్రత్యేక శ్రద్ధ",
+      "feature3": "బాగా అర్హత కలిగిన, అనుభవజ్ఞుల మరియు నివేదిక ఫ్యాకల్టీ",
+      "feature4": "జూనియర్ & డిగ్రీ కళాశాలలకు ప్రత్యేక భవనాలు",
+      "feature5": "రవాణా సౌకర్యాలు అందుబాటులో ఉన్నాయి",
+      "feature6": "SC, ST, BC, OC (EWS) స్కాలర్‌షిప్‌లు & ఈఎఎమ్‌సిఇటీ కోచింగ్",
+      "feature7": "వారానికో పరీక్షలు & వివరణాత్మక పురోగతి ట్రాకింగ్",
+      "feature8": "కెరీర్ కౌన్సెలింగ్ & ఉన్నత విద్య మార్గదర్శకత్వం",
+      "feature9": "మెరిట్ & సాంస్కృతిక/క్రీడా శ్రేష్ఠతకు స్కాలర్‌షిప్‌లు",
+      "feature10": "స్పోకెన్ ఇంగ్లీష్ & వ్యక్తిత్వ వికాస సెషన్‌లు",
+      "feature11": "బాగా సజ్జుకాబడిన సైన్స్ & కంప్యూటర్ ప్రయోగశాలలు",
+      "feature12": "రిఫరెన్స్ పుస్తకాలు & స్టడీ మెటీరియల్‌తో లైబ్రరీ",
+      
+      // Why Choose Us
+      "why_title": "💡 మమ్మల్ని ఎందుకు ఎంచుకోవాలి?",
+      "why1_title": "డిజిటల్ తరగతి గదులు",
+      "why1_desc": "మెరుగైన అభ్యాసం కోసం స్మార్ట్ టీచింగ్ టూల్స్ & ఆన్‌లైన్ పరీక్షలు.",
+      "why2_title": "సురక్షిత & మద్దతు వాతావరణం",
+      "why2_desc": "శిక్షణ, ఆత్మవిశ్వాసం & విద్యార్థి సంక్షేమంపై దృష్టి.",
+      "why3_title": "పూర్తి మార్గదర్శకత్వం",
+      "why3_desc": "ప్రవేశాల నుండి కెరీర్ వరకు - పూర్తి మద్దతు వ్యవస్థ.",
+      
+      // Footer
+      "footer_degree": "🎓 ఎస్‌ఎల్ఎస్ డిగ్రీ కళాశాల",
+      "footer_principal": "ప్రిన్సిపాల్",
+      "footer_degree_phone": "9989135445, 7702693936",
+      "footer_junior": "🏫 ఎస్‌ఎస్ జూనియర్ కళాశాల",
+      "footer_junior_principal": "ప్రిన్సిపాల్",
+      "footer_junior_phone": "9441011443",
+      "footer_correspondent": "👨‍💼 కరస్పాండెంట్",
+      "footer_correspondent_name": "ఐ. తిరుపాల్ రెడ్డి",
+      "footer_society": "శ్రీ శ్రీనివాస ఎడ్యుకేషన్ సొసైటీ",
+      "footer_certifications": "🏅 గుర్తింపు & ధృవీకరించబడింది",
+      "footer_cert_note": "అన్ని ధృవీకరణలు జాతీయ నియంత్రణ సంస్థలచే గుర్తించబడ్డాయి."
+    },
+    hi: {
+      // Header
+      "title": "श्री श्रीनिवास एजुकेशन सोसाइटी",
+      "subtitle": "एसएलएस डिग्री कॉलेज और एसएस जूनियर कॉलेज - पुल्लारेड्डीपेट",
+      
+      // Navigation
+      "nav_home": "होम",
+      "nav_about": "हमारे बारे में",
+      "nav_courses": "पाठ्यक्रम",
+      "nav_contact": "संपर्क करें",
+      "nav_login": "लॉगिन",
+      
+      // Login Modal
+      "login_title": "🔐 छात्र लॉगिन",
+      "login_submit": "जमा करें",
+      
+      // Admission Button
+      "admission_now": "📋 अभी प्रवेश लें",
+      
+      // Courses Section
+      "courses_title": "📘 पाठ्यक्रम प्रस्तावित",
+      "degree_college": "एसएलएस डिग्री कॉलेज",
+      "junior_college": "एसएस जूनियर कॉलेज",
+      "ba": "बी.ए",
+      "ba_subjects": "इतिहास, राजनीति विज्ञान (M)",
+      "bcom": "बी.कॉम",
+      "bcom_subjects": "सामान्य, कंप्यूटर एप्लीकेशन (M)",
+      "bsc": "बी.एससी",
+      "bsc_subjects": "बॉटनी, केमिस्ट्री, मैथमेटिक्स, कंप्यूटर साइंस, फिजिक्स (M)",
+      
+      // University Section
+      "university_title": "🎓 विश्वविद्यालय संबद्धता",
+      "affiliated": "संबद्ध विश्वविद्यालय",
+      "university_desc": "एसएलएस डिग्री कॉलेज <strong class='text-purple-800'>योगी वेमना विश्वविद्यालय</strong> से संबद्ध है।",
+      "university_recognition": "हम विश्वविद्यालय के शैक्षणिक ढांचे और पाठ्यक्रम का पालन करते हैं। प्रदान की गई डिग्रियां पूरे भारत में आधिकारिक तौर पर मान्यता प्राप्त और सम्मानित हैं।",
+      "visit_university": "🔗 विश्वविद्यालय वेबसाइट देखें",
+      
+      // Calendar Section
+      "calendar_title": "📅 शैक्षणिक कैलेंडर हाइलाइट्स",
+      "month_june": "जून",
+      "june_desc": "प्रवेश शुरू - अपनी सीट पहले से सुरक्षित करें।",
+      "month_july": "जुलाई",
+      "july_desc": "इंटर और डिग्री प्रोग्राम के लिए कक्षाओं की शुरुआत।",
+      "month_aug_dec": "अगस्त से दिसंबर",
+      "aug_dec_desc": "निरंतर आंतरिक परीक्षा, प्रैक्टिकल लैब और वैल्यू-एडेड वर्कशॉप।",
+      "month_jan": "जनवरी",
+      "jan_desc": "प्री-फाइनल परीक्षा और करियर रेडीनेस ट्रेनिंग।",
+      "month_mar_apr": "मार्च - अप्रैल",
+      "mar_apr_desc": "फाइनल बोर्ड/विश्वविद्यालय परीक्षा।",
+      "month_may": "मई",
+      "may_desc": "समर कैंप, सांस्कृतिक उत्सव और ब्रिज कोर्स।",
+      "download_calendar": "📥 पूरा कैलेंडर डाउनलोड करें (PDF)",
+      
+      // Gallery
+      "gallery_title": "🖼️ हमारे कैंपस की गैलरी",
+      
+      // Features
+      "features_title": "🌟 मुख्य विशेषताएं",
+      "feature1": "प्रार्थना और परामर्श के साथ अनुशासन और नैतिक शिक्षा",
+      "feature2": "प्रत्येक छात्र की प्रगति और उपस्थिति पर विशेष ध्यान",
+      "feature3": "अच्छी तरह से योग्य, अनुभवी और समर्पित संकाय",
+      "feature4": "जूनियर और डिग्री कॉलेज के लिए अलग-अलग भवन",
+      "feature5": "परिवहन सुविधाएं उपलब्ध",
+      "feature6": "SC, ST, BC, OC (EWS) छात्रवृत्ति और EAMCET कोचिंग",
+      "feature7": "साप्ताहिक परीक्षा और विस्तृत प्रगति ट्रैकिंग",
+      "feature8": "करियर काउंसलिंग और उच्च शिक्षा मार्गदर्शन",
+      "feature9": "योग्यता और सांस्कृतिक/खेल उत्कृष्टता के लिए छात्रवृत्ति",
+      "feature10": "स्पोकन इंग्लिश और व्यक्तित्व विकास सत्र",
+      "feature11": "अच्छी तरह से सुसज्जित विज्ञान और कंप्यूटर प्रयोगशालाएं",
+      "feature12": "संदर्भ पुस्तकों और अध्ययन सामग्री के साथ पुस्तकालय",
+      
+      // Why Choose Us
+      "why_title": "💡 हमें क्यों चुनें?",
+      "why1_title": "डिजिटल कक्षाएं",
+      "why1_desc": "बेहतर सीखने के लिए स्मार्ट शिक्षण उपकरण और ऑनलाइन परीक्षण।",
+      "why2_title": "सुरक्षित और सहायक वातावरण",
+      "why2_desc": "अनुशासन, आत्मविश्वास और छात्र कल्याण पर ध्यान।",
+      "why3_title": "पूर्ण मार्गदर्शन",
+      "why3_desc": "प्रवेश से लेकर करियर तक - पूर्ण सहायता प्रणाली।",
+      
+      // Footer
+      "footer_degree": "🎓 एसएलएस डिग्री कॉलेज",
+      "footer_principal": "प्राचार्य",
+      "footer_degree_phone": "9989135445, 7702693936",
+      "footer_junior": "🏫 एसएस जूनियर कॉलेज",
+      "footer_junior_principal": "प्राचार्य",
+      "footer_junior_phone": "9441011443",
+      "footer_correspondent": "👨‍💼 संवाददाता",
+      "footer_correspondent_name": "आई. तिरुपाल रेड्डी",
+      "footer_society": "श्री श्रीनिवास एजुकेशन सोसाइटी",
+      "footer_certifications": "🏅 मान्यता प्राप्त और प्रमाणित",
+      "footer_cert_note": "सभी प्रमाणपत्र राष्ट्रीय नियामक निकायों द्वारा मान्यता प्राप्त हैं।"
+    }
+  };
+
+  // Function to switch language
+  function switchLanguage(lang) {
+    // Get all elements with data-i18n attribute
+    const elements = document.querySelectorAll('[data-i18n]');
+    
+    // Update each element's text content
+    elements.forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        // For elements that might contain HTML (like university_desc)
+        if (element.innerHTML.includes('<strong>')) {
+          element.innerHTML = translations[lang][key];
+        } else {
+          element.textContent = translations[lang][key];
+        }
+      }
+    });
+    
+    // Update the selected language in dropdown
+    document.getElementById('languageSelect').value = lang;
+  }
+
+  // Add event listener to language select dropdown
+  document.getElementById('languageSelect').addEventListener('change', function() {
+    switchLanguage(this.value);
+    
+    // Store selected language in localStorage
+    localStorage.setItem('selectedLanguage', this.value);
+  });
+
+  // Check for saved language preference
+  const savedLanguage = localStorage.getItem('selectedLanguage');
+  if (savedLanguage) {
+    switchLanguage(savedLanguage);
+  } else {
+    // Initialize with English by default
+    switchLanguage('en');
+  }
+</script>
+
+</body>
+</html>
